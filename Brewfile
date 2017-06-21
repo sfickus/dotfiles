@@ -20,7 +20,7 @@ brew 'findutils'
 brew 'bash'
 
 # Install more recent versions of some macOS tools
-brew 'homebrew/dupes/grep'
+brew 'grep' # deprecated - 'homebrew/dupes/grep'
 
 # Install Binaries
 brew 'awscli'
