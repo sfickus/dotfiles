@@ -41,9 +41,9 @@ export PATH=$PATH;
 
 ## OTHERS
 
-export GOPATH="/Users/jerryprice/gocode";
+export GOPATH="$HOME/gocode";
 export TZ="America/New_York";
-export COMPOSER_HOME="/Users/jerryprice/.composer"
+export COMPOSER_HOME="$HOME/.composer"
 export EDITOR='subl'
 
 source $(brew --prefix php-version)/php-version.sh && php-version 7.0

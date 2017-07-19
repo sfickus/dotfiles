@@ -11,7 +11,7 @@ alias flushdns='dscacheutil -flushcache && sudo killall -HUP mDNSResponder &&say
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias mykey="cat ~/.ssh/id_rsa.pub | pbcopy"
-alias psql='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
+#alias psql='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
 alias hg='history | grep '
 alias ping='ping -c 3'
 alias weather="curl -4 http://wttr.in"
@@ -145,6 +145,25 @@ function jpg(){
         jpegtran -copy none -outfile /dev/null -optimize -progressive $f
         jpegoptim -m 90 --strip-all -q $f
     done
+}
+
+
+function blog-download() {
+    if [ $# -lt 1 ]; then
+        echo "Missing argument";
+        return 1;
+    fi
+
+    echo "$1""$2"
+
+    mkdir -p $1/$2
+
+    cd $1/$2
+
+    wget $3
+    wget $4
+
+    cd ...
 }
 
 
