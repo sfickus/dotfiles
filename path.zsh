@@ -37,6 +37,9 @@ PATH="$HOME/google-cloud-sdk/bin:$PATH";
 # my user shortcuts/apps
 PATH="$HOME/bin:$PATH";
 
+# spark
+PATH="$HOME/.spark-installer:$PATH";
+
 export PATH=$PATH;
 
 ## OTHERS

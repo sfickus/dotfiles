@@ -11,6 +11,7 @@ alias flushdns='dscacheutil -flushcache && sudo killall -HUP mDNSResponder &&say
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias mykey="cat ~/.ssh/id_rsa.pub | pbcopy"
+alias jjpkey="cat ~/.ssh/jjpmann-4096-rsa.pub | pbcopy"
 #alias psql='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
 alias hg='history | grep '
 alias ping='ping -c 3'

@@ -3,7 +3,7 @@
 echo "Setting up your Mac..."
 
 # ask for sudo upfront
-sudo -v 
+sudo -vK
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
@@ -23,6 +23,9 @@ brew bundle
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
@@ -41,3 +44,6 @@ mkdir $HOME/Sites
 # Set macOS preferences
 # We will run this last because this will reload the shell
 # source .macos
+
+
+sudo -k
