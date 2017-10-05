@@ -24,6 +24,9 @@ ignore() { echo -n "\n$1" >> .gitignore }
 alias commits="svn log -v --xml | grep '<author.*/author>' | sort $* | uniq -c | sort -rn";
 alias gitsvn="/usr/local/Cellar/git/2.6.2/bin/git svn "
 alias git-log='git log --pretty=format:"%h - %an, %ar : %s" '
+
+# git log --pretty=format:"%h - %aD, %ar : %s"
+
 alias bfg='java -jar ~/bfg-1.12.8.jar '
 alias selenium='nohup java -jar ~/bin/selenium-server-standalone.jar > ~/selenium.log &'
 alias chrome='nohup chromedriver --port=4446 --log=~/chrome.log > ~/chrome.log &'
@@ -61,6 +64,16 @@ alias a="php artisan"
 alias phpunit="phpunit --colors"
 alias pc="composer"
 alias pa="php artisan"
+alias tinker="php artisan tinker"
+
+# Brew
+alias bs="brew services list"
+alias bsr="brew services restart "
+alias bsstart="brew services start "
+alias bsstop="brew services stop "
+alias sbsr="sudo brew services restart "
+alias sbsstart="sudo brew services start "
+alias sbsstop="sudo brew services stop "
 
 # Vagrant
 alias v='vagrant'
@@ -94,6 +107,8 @@ mktouch() {
     done
 }
 
+
+
 function png-new(){
     if [ $# -lt 1 ]; then
         echo "Missing argument";
@@ -104,7 +119,7 @@ function png-new(){
         name=$(basename $f .png)
         new=$name-new.png
         cp $f $new
-        pngquant --quality=70-85 --ext=.png --force $new
+        pngquant --quality=$PNGQUALITY --ext=.png --force $new
         optipng -quiet -o7 $new
     done
 }
@@ -116,7 +131,7 @@ function png(){
     fi
 
     for f in "$@"; do
-        pngquant --quality=70-85 --ext=.png --force $f
+        pngquant --quality=$PNGQUALITY --ext=.png --force $f
         optipng -quiet -o7 $f
     done
 }
@@ -132,7 +147,7 @@ function jpg-new(){
         new=$name-new.jpg
         cp $f $new
         jpegtran -copy none -outfile /dev/null -optimize -progressive $new
-        jpegoptim -m 90 --strip-all -q $new
+        jpegoptim -m $JPGQUALITY --strip-all -q $new
     done
 }
 
@@ -144,7 +159,7 @@ function jpg(){
 
     for f in "$@"; do
         jpegtran -copy none -outfile /dev/null -optimize -progressive $f
-        jpegoptim -m 90 --strip-all -q $f
+        jpegoptim -m $JPGQUALITY --strip-all -q $f
     done
 }
 

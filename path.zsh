@@ -44,9 +44,13 @@ export PATH=$PATH;
 
 ## OTHERS
 
+export JPGQUALITY="90";
+export PNGQUALITY="70-85";
 export GOPATH="$HOME/gocode";
 export TZ="America/New_York";
 export COMPOSER_HOME="$HOME/.composer"
 export EDITOR='subl'
+
+export SLIMERJSLAUNCHER=/Applications/Firefox50.app/Contents/MacOS/firefox
 
 source $(brew --prefix php-version)/php-version.sh && php-version 7.0
