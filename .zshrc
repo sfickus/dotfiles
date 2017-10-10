@@ -57,6 +57,11 @@ plugins=(brew bundler composer eecli git git-extras git-open github httpie npm o
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
+
+# My Aliases and Paths
+source $DOTFILES/aliases.zsh
+source $DOTFILES/path.zsh
+
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
