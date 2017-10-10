@@ -1,6 +1,8 @@
 # Path to your dotfiles installation.
 export DOTFILES=$HOME/.dotfiles
 
+. $HOME/Dropbox/Mackup/.oh-my-zsh/custom/plugins/z/z.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 

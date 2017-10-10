@@ -107,7 +107,8 @@ mktouch() {
     done
 }
 
-
+export JPGQUALITY='90'
+export PNGQUALITY='75-80'
 
 function png-new(){
     if [ $# -lt 1 ]; then
